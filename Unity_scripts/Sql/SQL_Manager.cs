@@ -11,7 +11,7 @@ public class SQL_Manager : MonoBehaviour
 {
 
 
-    private void Awake()    //prosty
+    private void Awake()    //prosty singleton
     {
         if(!GameObject.Find("SQL_Manager"))
         {
