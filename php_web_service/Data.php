@@ -20,7 +20,7 @@ include 'sql_data/Reset.php';
  $request_id=$_POST['Request'];//rodzaj zapytania
  $row_id=$_POST['Id'];//id rekordu
  $table=$_POST['Table'];//nazwa tabeli
- $data=$_POST['Data']; //json z zawartoscią do operacji insert
+ $data=$_POST['Data']; //json z zawartoscią obiektu do operacji insert
 
 
  $object= Set_Object($table,$row_id,json_decode($data,true)); //tworzenie konkretenj klasy ,  line 47
