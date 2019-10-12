@@ -17,17 +17,16 @@ include 'sql_data/Empty_.php';
 include 'sql_data/Deliver.php';
 include 'sql_data/Reset.php';
 
- $request_id=$_POST['Request'];
+ $request_id=$_POST['Request'];//rodzaj zapytania
+ $row_id=$_POST['Id'];//id rekordu
+ $table=$_POST['Table'];//nazwa tabeli
+ $data=$_POST['Data']; //json z zawartoscią do operacji insert
 
- $row_id=$_POST['Id'];
- $table=$_POST['Table'];
 
- $data=$_POST['Data'];
+ $object= Set_Object($table,$row_id,json_decode($data,true)); //tworzenie konkretenj klasy ,  line 47
 
- $object= Set_Object($table,$row_id,json_decode($data,true));
- $result;
 
- if($request_id=="Select")
+ if($request_id=="Select") //wszystkie klasy dziedziczą interface "SQL_interface" który zawiera metody Select,Insert,Update,Delete
  {
   echo(json_encode($object->Select(), JSON_PRETTY_PRINT));
  }

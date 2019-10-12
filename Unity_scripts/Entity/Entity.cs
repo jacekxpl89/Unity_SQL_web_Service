@@ -8,7 +8,7 @@ public enum EnityType
 {
     Building,Unit,Monster,other
 }
-public abstract class Entity : Observer
+public abstract class Entity : Observer 
 {
     public int E_id;
     public string E_name;

@@ -33,9 +33,9 @@ public class SQL_Manager : MonoBehaviour
         {
             while (www.isDone == false)
             {
-                await Task.Delay(1000 / 30);//30 hertz
+                await Task.Delay(1000 / 30);
             }
-         //  print(www.text);
+     
         }
 
     }
@@ -48,13 +48,10 @@ public class SQL_Manager : MonoBehaviour
         form.AddField("Data", "null");
         using (WWW www =new WWW("http://localhost/rts_sql/Data.php", form))
         {
-            //begin requenst:
           
-
-            //await until it's done: 
             while (www.isDone == false)
             {
-                await Task.Delay(1000 / 30);//30 hertz
+                await Task.Delay(1000 / 30);
             }
             try
             {
@@ -107,13 +104,10 @@ public class SQL_Manager : MonoBehaviour
         form.AddField("Data","null");
         using (WWW www = new WWW("http://localhost/rts_sql/Data.php", form))
         {
-            //begin requenst:
-
-
-            //await until it's done: 
+           
             while (www.isDone == false)
             {
-                await Task.Delay(1000 / 30);//30 hertz
+                await Task.Delay(1000 / 30);
             }
             try
             {
@@ -142,7 +136,7 @@ public class SQL_Manager : MonoBehaviour
         {
             while (www.isDone == false)
             {
-                await Task.Delay(1000 / 30);//30 hertz
+                await Task.Delay(1000 / 30);
             }
          //   print(JsonUtility.ToJson(newData));
          //   print(www.text);
@@ -161,7 +155,7 @@ public class SQL_Manager : MonoBehaviour
         {
             while (www.isDone == false)
             {
-                await Task.Delay(1000 / 30);//30 hertz
+                await Task.Delay(1000 / 30);
             }
              print(www.text);
         }
@@ -179,7 +173,7 @@ public class SQL_Manager : MonoBehaviour
         {
             while (www.isDone == false)
             {
-                await Task.Delay(1000 / 30);//30 hertz
+                await Task.Delay(1000 / 30);
             }
           print(www.text);
         }

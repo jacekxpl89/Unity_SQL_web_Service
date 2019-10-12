@@ -9,12 +9,6 @@ using UnityEngine.Networking;
 public class SQL_Load : MonoBehaviour
 {
 
-
-  
-
-
-  
-  
 }
 
 public interface Load_SQL_Data
