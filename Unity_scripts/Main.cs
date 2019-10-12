@@ -21,9 +21,9 @@ public class Main : MonoBehaviour
   
         Mouse_man = this.GetComponent<Mouse_Manager>();
 
-          Building_man.Load(new GameObject("budynki"));
+          Building_man.Load(new GameObject("budynki")); //wczytuje budynki SQL
 
-        GameObject car = new Car().Get_new_object(new Vector3(0, 0, 0));
+        GameObject car = new Car().Get_new_object(new Vector3(0, 0, 0)); //wczytuje autko
        
 
      
@@ -37,18 +37,4 @@ public class Main : MonoBehaviour
 
     
 
-    /* private void Update()
-     {
-         if(Input.GetKeyDown(KeyCode.R))
-         {
-             foreach(var obj in Objects)
-             {
-                 if(obj.GetComponent<Entity>().E_type == EnityType.Building)
-                 {
-                     obj.GetComponent<Company>().C_Name = "biedra" + Random.Range(0, 100).ToString();
-                     obj.GetComponent<Entity>().Refresh(obj.GetComponent<Company>());
-                 }
-             }
-         }
-     }*/
 }
