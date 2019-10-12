@@ -15,9 +15,8 @@ public class Gui_bar : MonoBehaviour
         Set_position();
     }
 
-   public void Set_position()
+   public void Set_position() //ustawia pasek na obiektem w grze
     {
-      
         if(transform.parent.GetComponent<BoxCollider>())
         {
             Vector3 parent_poz = transform.parent.transform.position;
@@ -30,7 +29,7 @@ public class Gui_bar : MonoBehaviour
     {
         Progress.color = c;
     }
-   public void Refresh(float i)
+   public void Refresh(float i) //obraca pasek by był tak samo ustawiony do kamery
     {
         if(Progress!=null && text != null)
         {

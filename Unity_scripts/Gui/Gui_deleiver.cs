@@ -57,22 +57,15 @@ public class Gui_deleiver : MonoBehaviour
          {
              return;
          }
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); //wylacza interface z widoku
 
-        GameObject car = GameObject.Find("Car");
+        GameObject car = GameObject.Find("Car"); //wczytuje samochod
 
 
         print(building1.Location + " " + building2.Location);
          GameObject buildingA = Building.Find(building1.Id);
          GameObject buildingB = Building.Find(building2.Id);
-        if(buildingA is null )
-        {
-            print("Xd");
-        }
-        if (buildingB is null)
-        {
-            print("Xd1");
-        }
+      
         //tworze nowe zamowienie
         Data_item_list new_list = new Data_item_list() { Name = "Order#" + UnityEngine.Random.Range(0, 100000) };
          string list_id = await SQL_Manager.Insert<Data_item_list>("Item_list", new_list);
@@ -127,7 +120,7 @@ public class Gui_deleiver : MonoBehaviour
      }
    async Task Refresh_Company_data() 
     {
-        
+        //wczytywanie zawartosci wybranego budynku
         string p1 = D_Company_A.options[D_Company_A.value].text;
         string p2 = D_Company_B.options[D_Company_B.value].text;
 

@@ -30,7 +30,8 @@ public class Gui_Select_Product : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-   public void Send()//odsyla liste do guideleiver
+    //okno na ktorym wybieramy ktore produkty mają zostać przesłane
+   public void Send()//odsyla liste do gui_deleiver
     {
 
         if (List_to.Count != 0 && List_to != null)

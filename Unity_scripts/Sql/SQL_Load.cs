@@ -16,6 +16,9 @@ public interface Load_SQL_Data
     GameObject Get_new_objectSQL(object sqldata);
 }
 
+
+
+
 [System.Serializable]
 public class Sql_list<T>
 {

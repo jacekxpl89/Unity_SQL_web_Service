@@ -55,7 +55,7 @@ public class Gui_items_panel : MonoBehaviour
         temp.GetComponent<Gui_item>().Refresh(item);
     }
 
-    public async void Load_Company_products(int List_Id)
+    public async void Load_Company_products(int List_Id)//pobiera produkty z magazynu i wyswietla je
     {
         gameObject.SetActive(true);
         Clear_Items();

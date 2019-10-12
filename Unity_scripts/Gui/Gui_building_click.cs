@@ -28,7 +28,7 @@ public class Gui_building_click:Observalbe
 
 
 
-    public void Set_position()
+    public void Set_position() //ustawia ikonke nad obiektem w grze
     {
 
         if (transform.parent.GetComponent<BoxCollider>())
@@ -53,7 +53,8 @@ public class Gui_building_click:Observalbe
    public async void Show_building_interface()
     {
         Building b = transform.parent.transform.parent.GetComponent<Building>();
-        Gui_main.Close_other_windows(Gui_main.gui_Building_Interface.gameObject);
-        Gui_main.gui_Building_Interface.Load_new_data(b);
+
+        Gui_main.Close_other_windows(Gui_main.gui_Building_Interface.gameObject); //zamyka wszystkie okna oprócz tego w argumencie
+        Gui_main.gui_Building_Interface.Load_new_data(b); //ładuje nową zawartosc w interface
     }
 }

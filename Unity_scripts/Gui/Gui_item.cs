@@ -32,7 +32,7 @@ public class Gui_item : Entity
         
     }
 
-    public async void Refresh(int itemId)
+    public async void Refresh(int itemId) //wczytuje item z podanego id
     {
 
           data_item = await SQL_Manager.Select<Data_item>("Item", itemId);

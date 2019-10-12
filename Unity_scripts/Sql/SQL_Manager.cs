@@ -6,13 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine.Networking;
 
-public delegate void Sql_Acction(string json,GameObject output);
-public delegate  void Sql_Acctionlist<T>(string json, List<T> output);
+
 public class SQL_Manager : MonoBehaviour
 {
 
-    Sql_Acction acctionn;
-    private void Awake()
+
+    private void Awake()    //porsty sigleton 
     {
         if(!GameObject.Find("SQL_Manager"))
         {
@@ -22,7 +21,7 @@ public class SQL_Manager : MonoBehaviour
         }
     }
 
-    public static async Task Update<T>(string table,int id, T newData)
+    public static async Task Update<T>(string table,int id, T newData)//tabela , id , jakiś obiekt
     {
         WWWForm form = new WWWForm();
         form.AddField("Request", "Update");
@@ -55,7 +54,7 @@ public class SQL_Manager : MonoBehaviour
             }
             try
             {
-                Sql_list<T> comp = JsonUtility.FromJson<Sql_list<T>>(www.text);
+                Sql_list<T> comp = JsonUtility.FromJson<Sql_list<T>>(www.text); //zamiania jsona na lista obiektów
                 return comp.content;
             }
             catch

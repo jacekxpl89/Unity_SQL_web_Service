@@ -13,7 +13,7 @@ public class Gui_main : MonoBehaviour
     public static Gui_menu gui_menu;
     private void Awake()
     {
-        if(!GameObject.Find("GUI"))
+        if(!GameObject.Find("GUI")) //singleton
         {
             GameObject gui = new GameObject("GUI");
             gui.AddComponent<Canvas>();
@@ -31,7 +31,7 @@ public class Gui_main : MonoBehaviour
         Set_child();
        
     }
-    public static void Close_other_windows(GameObject g)
+    public static void Close_other_windows(GameObject g)//zamyka wszystkie okna procz podanego w argumencie
     {
         foreach(Transform t in GameObject.Find("GUI").transform)
         {
@@ -43,7 +43,7 @@ public class Gui_main : MonoBehaviour
         g.SetActive(true);
     }
     
-    public void Set_child()
+    public void Set_child()//wczytuje inne interface'y
     {
       
        

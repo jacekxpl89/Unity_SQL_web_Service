@@ -8,6 +8,7 @@ public enum EnityType
 {
     Building,Unit,Monster,other
 }
+//głowna klasa po której dziedziczą wszystkie "żywe" obiekty  
 public abstract class Entity : Observer 
 {
     public int E_id;
@@ -33,38 +34,42 @@ public abstract class Entity : Observer
     {
         Refresh(o);
     }
-    public void Add_action(Acction acction)
+
+    public void Add_action(Acction acction) //dodawanie zadanie
     {
         U_acctionsqueue.Add(acction);
     }
-    public void Start_actions()
+    public void Start_actions()//zaczyna zadanie jesli poprzednie sa ukonczone
     {
         if (!Is_acction)
         {
             StartCoroutine(Start_actions(1));
         }
     }
-    private IEnumerator Start_actions(int b)
+    private IEnumerator Start_actions()
     {
         Is_acction = true;
         List<Acction> acction = new List<Acction>();
-        foreach (var a in U_acctionsqueue)
+        foreach (var a in U_acctionsqueue)  //usuwa taski z kolejki do listy ktora je uruchamia
         {
             acction.Add(a);
         }
         U_acctionsqueue.Clear();
-        foreach (Acction a in acction)
+
+        foreach (Acction a in acction) //wykonuije zadania 
         {
             StartCoroutine(a.Start_acction());
-            while (!a.done)
+            while (!a.done)//jesli task zostaje ukonczony done = true
             {
                 yield return new WaitForSeconds(0.01f);
             }
         }
+
         Is_acction = false;
-        if (U_acctionsqueue.Count != 0)
+
+        if (U_acctionsqueue.Count != 0) //jesli w miedzyczasie zostały dodane nowe zadanie funkcja wykonuje sie jeszcze raz
         {
-            StartCoroutine(Start_actions(0));
+            StartCoroutine(Start_actions());
         }
     }
     public void Give_parameter(Entity e1 , Entity e2)
